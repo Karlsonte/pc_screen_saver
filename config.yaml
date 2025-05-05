@@ -39,7 +39,7 @@ colors:
 # Смещения для мониторов (для многомониторных конфигураций)
 monitor_offsets:
   0: [0, 0] # Primary monitor offset | Смещение основного монитора
-  1: [-1080, -442] # Secondary monitor offset (horizontal('-'left/'+'right), vertical('-'up/'+'down')) | Смещение второго монитора (горизонтальное('-'левый/'+'правый), вертикальное('-'вверх/'+'вниз'))
+  1: [0, 0] # Secondary monitor offset (horizontal('-'left/'+'right), vertical('-'up/'+'down')) | Смещение второго монитора (горизонтальное('-'левый/'+'правый), вертикальное('-'вверх/'+'вниз'))
   2: [0, 0] # Tertiary monitor offset | Смещение третьего монитора]
 # Performance settings
 # Настройки производительности
