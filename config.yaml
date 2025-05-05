@@ -57,7 +57,7 @@ speeds:
 # Watchdog settings
 # Настройки watchdog (сторожевого процесса)
 watchdog:
-  inactivity_timeout: 0.25 # Minutes of inactivity before screensaver starts | Минуты бездействия перед запуском заставки
+  inactivity_timeout: 5 # Minutes of inactivity before screensaver starts | Минуты бездействия перед запуском заставки
   audio_threshold: 0.01 # Audio level threshold for activity detection | Порог уровня звука для обнаружения активности
   ignore_processes: # Processes to ignore when checking audio | Процессы, которые нужно игнорировать при проверке звука
     - "discord.exe"
