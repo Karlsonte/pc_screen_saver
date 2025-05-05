@@ -157,7 +157,7 @@ try:
                 proc = None
 
         if idle > idle_threshold and proc is None:
-            if  is_media_playing(): # is_fullscreen_app_running() or
+            if  is_media_playing():
                 skiping_check = idle_threshold if idle > idle_threshold else idle
                 time.sleep(skiping_check)
             else:
