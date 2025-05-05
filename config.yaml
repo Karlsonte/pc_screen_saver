@@ -1,0 +1,73 @@
+# Screen Saver Configuration
+# Конфигурация экранной заставки
+
+# Font settings
+# Настройки шрифта
+font:
+  # Available fonts:  Micro5-Regular.ttf | PixelifySans-Regular.ttf | SourceCodePro-Light.ttf | CourierPrime-Regular.ttf | Hack-Regular.ttf
+  path: "SourceCodePro-Light.ttf" # Path to font file (relative to script location) | Путь к файлу шрифта (относительно расположения скрипта)
+  size: 10 # Font size in pixels | Размер шрифта в пикселях
+
+# Visual elements configuration
+# Конфигурация визуальных элементов
+visual:
+  primes: [4, 5, 6, 7, 9] # Numbers used for noise effects | Числа, используемые для эффектов шума
+  primes_noise_prob: 0.1 # Probability of prime numbers appearing | Вероятность появления простых чисел
+  noise_density: 0.3 # General noise density | Общая плотность шума
+  disk_noise_density: 0.005 # Disk activity noise density | Плотность шума активности диска
+  min_disk_activity: 0.3 # Minimum disk activity | Минимальная активность диска
+  net_noise_density: 0.005 # Network activity noise density | Плотность шума сетевой активности
+  min_net_activity: 0.3 # Minimum network activity | Минимальная сетевая активность
+
+# Color settings
+# Настройки цветов
+colors:
+  background: [0, 0, 0, 0] # Background color (RGBA) | Цвет фона (RGBA)
+  base: [40, 60, 40] # Base color for "0" characters | Базовый цвет для символов "0"
+  active: [0, 255, 0] # Active color for "1" characters | Активный цвет для символов "1"
+  net: [255, 255, 0] # Network activity color | Цвет сетевой активности
+  disk: [0, 0, 255] # Disk activity color | Цвет активности диска
+  predefined: # Predefined colors for random noise | Предопределенные цвета для случайного шума
+    - [255, 0, 0]
+    - [0, 255, 0]
+    - [0, 0, 255]
+    - [255, 255, 0]
+    - [0, 255, 255]
+    - [255, 0, 255]
+
+# Monitor offsets (for multi-monitor setups)
+# Смещения для мониторов (для многомониторных конфигураций)
+monitor_offsets:
+  0: [0, 0] # Primary monitor offset | Смещение основного монитора
+  1: [0, 0] # Secondary monitor offset (horizontal('-'left/'+'right), vertical('-'up/'+'down')) | Смещение второго монитора (горизонтальное('-'левый/'+'правый), вертикальное('-'вверх/'+'вниз'))
+  2: [0, 0] # Tertiary monitor offset | Смещение третьего монитора]
+# Performance settings
+# Настройки производительности
+performance:
+  update_rate: 0.1 # Update rate in seconds | Частота обновления в секундах
+  fps: 24 # Target frames per second | Целевое количество кадров в секунду
+  cache_size: 500 # Texture cache size | Размер кэша текстур
+
+# Speed settings
+# Настройки скорости
+speeds:
+  average_disk_speed: 100.0 # Average disk speed (MB/s) | Средняя скорость диска (МБ/с)
+  average_net_speed: 100000.0 # Average network speed (KB/s) | Средняя скорость сети (KБ/с)
+
+# Watchdog settings
+# Настройки watchdog (сторожевого процесса)
+watchdog:
+  inactivity_timeout: 5 # Minutes of inactivity before screensaver starts | Минуты бездействия перед запуском заставки
+  audio_threshold: 0.01 # Audio level threshold for activity detection | Порог уровня звука для обнаружения активности
+  ignore_processes: # Processes to ignore when checking audio | Процессы, которые нужно игнорировать при проверке звука
+    - "discord.exe"
+  media_processes: # Media player processes | Процессы медиаплееров
+    - "vlc.exe"
+    - "mpv.exe"
+    - "potplayer.exe"
+    - "kmplayer.exe"
+    - "wmplayer.exe"
+    - "chrome.exe"
+    - "firefox.exe"
+    - "opera.exe"
+    - "edge.exe"
