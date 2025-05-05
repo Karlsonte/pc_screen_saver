@@ -9,17 +9,12 @@ Windows-скринсейвер на Python с мониторингом акти�
 
 1. **Зависимости**:
    ```bash
-   pip install -r requirements.txt
+   ```pip install -r requirements.txt
 ### Настройка
 #### Перед запуском проверьте файлы конфигурации:
 	config.yaml – настройки цветов, шрифтов, мониторов и порогов активности.
 	image_0.jpg, image_1.jpg – фоновые изображения для каждого монитора (можно заменить своими). цифра после "image_" это индекс монитора.
 	font.ttf – файл шрифта (указан в config.yaml).
-
-2. **Файлы конфигурации**:
-config.yaml – настройки цветов, шрифтов, мониторов и порогов активности.
-image_0.jpg, image_1.jpg – фоновые изображения для каждого монитора.
-font.ttf – файл шрифта (указан в config.yaml).
 
 ### Запуск:
 	```bash
@@ -49,3 +44,45 @@ font.ttf – файл шрифта (указан в config.yaml).
 	Проверьте, что в ignore_processes (конфиг) добавлены все фоновые приложения с звуком которые нужно игнорировать.
 	Для многомониторных систем укажите правильные monitor_offsets.
 
+
+
+A Python-based Windows screensaver with activity monitoring (mouse, keyboard, audio, full-screen apps).
+Launches the visualization (screen_saver.py) during inactivity and gracefully terminates it upon resuming activity.
+
+## 🔧 Installation
+1. **Dependencies**
+	```bash
+	```pip install -r requirements.txt  
+
+### Configuration
+#### Before running, ensure the following files are properly set up:
+	config.yaml – Settings for colors, fonts, monitors, and activity thresholds.
+	image_0.jpg, image_1.jpg – Background images for each monitor (replace with your own). The number after image_ corresponds to the monitor index.
+	font.ttf – Font file (specified in config.yaml).
+
+### Launch
+	```bash
+	```python watchdog.py  
+🚀 How It Works
+#### Watchdog (watchdog.py)
+	Monitors activity (input, audio, full-screen applications).
+	Starts screen_saver.py after a period of inactivity (configurable in config.yaml).
+	Automatically stops the screensaver when Esc is pressed.
+
+#### Screensaver (screen_saver.py)
+	Displays an animated matrix with effects across all monitors.
+	Dynamically adjusts colors based on CPU, RAM, disk, and network load.
+	Optimizes memory usage via caching and periodic cleanup.
+
+⚠️ Troubleshooting
+#### Memory Leaks
+	The code includes a TextureCache with automatic cleanup.
+	Recommendation: Ensure CACHE_SIZE in config.yaml is not set too high.
+
+#### Zombie Processes
+	Watchdog uses terminate_subprocess() with dual verification (terminate() + kill()).
+	The screensaver includes a SIGTERM handler for proper termination.
+
+#### Audio/Monitor Issues
+	Verify that ignore_processes (in config) lists all background audio apps to exclude.
+	For multi-monitor setups, ensure correct monitor_offsets values.
