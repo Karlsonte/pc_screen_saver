@@ -9,7 +9,7 @@ Windows-скринсейвер на Python с мониторингом акти�
 
 1. **Зависимости**:
    ```bash
-   ```pip install -r requirements.txt
+   pip install -r requirements.txt
 ### Настройка
 #### Перед запуском проверьте файлы конфигурации:
 	config.yaml – настройки цветов, шрифтов, мониторов и порогов активности.
@@ -52,7 +52,7 @@ Launches the visualization (screen_saver.py) during inactivity and gracefully te
 ## 🔧 Installation
 1. **Dependencies**
 	```bash
-	```pip install -r requirements.txt  
+	pip install -r requirements.txt  
 
 ### Configuration
 #### Before running, ensure the following files are properly set up:
@@ -62,7 +62,7 @@ Launches the visualization (screen_saver.py) during inactivity and gracefully te
 
 ### Launch
 	```bash
-	```python watchdog.py  
+	python watchdog.py  
 🚀 How It Works
 #### Watchdog (watchdog.py)
 	Monitors activity (input, audio, full-screen applications).
